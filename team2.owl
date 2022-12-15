@@ -1,0 +1,420 @@
+@prefix : <http://lis537.uw.edu/ontologies/2022aut/team2#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://lis537.uw.edu/ontologies/2022aut/team2> .
+
+<http://lis537.uw.edu/ontologies/2022aut/team2> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://lis537.uw.edu/ontologies/2022aut/team2/hasCitizen
+<http://lis537.uw.edu/ontologies/2022aut/team2/hasCitizen> rdf:type owl:ObjectProperty ;
+                                                           rdfs:subPropertyOf owl:topObjectProperty ;
+                                                           owl:inverseOf <http://lis537.uw.edu/ontologies/2022aut/team2/isCitizenOf> ;
+                                                           rdfs:domain <http://lis537.uw.edu/ontologies/2022aut/team2/Countries> ;
+                                                           rdfs:range <http://lis537.uw.edu/ontologies/2022aut/team2/People> .
+
+
+###  http://lis537.uw.edu/ontologies/2022aut/team2/hasCurrentAddress
+<http://lis537.uw.edu/ontologies/2022aut/team2/hasCurrentAddress> rdf:type owl:ObjectProperty ;
+                                                                  rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                  owl:inverseOf <http://lis537.uw.edu/ontologies/2022aut/team2/isCurrentAddressOf> ;
+                                                                  rdfs:domain <http://lis537.uw.edu/ontologies/2022aut/team2/People> ;
+                                                                  rdfs:range <http://lis537.uw.edu/ontologies/2022aut/team2/Places> .
+
+
+###  http://lis537.uw.edu/ontologies/2022aut/team2/hasFounder
+<http://lis537.uw.edu/ontologies/2022aut/team2/hasFounder> rdf:type owl:ObjectProperty ;
+                                                           rdfs:subPropertyOf owl:topObjectProperty ;
+                                                           owl:inverseOf <http://lis537.uw.edu/ontologies/2022aut/team2/isFounderOf> ;
+                                                           rdfs:domain <http://lis537.uw.edu/ontologies/2022aut/team2/Organizations> ;
+                                                           rdfs:range <http://lis537.uw.edu/ontologies/2022aut/team2/People> .
+
+
+###  http://lis537.uw.edu/ontologies/2022aut/team2/hasHolder
+<http://lis537.uw.edu/ontologies/2022aut/team2/hasHolder> rdf:type owl:ObjectProperty ;
+                                                          rdfs:subPropertyOf owl:topObjectProperty ;
+                                                          owl:inverseOf <http://lis537.uw.edu/ontologies/2022aut/team2/isHolderOf> ;
+                                                          rdfs:domain <http://lis537.uw.edu/ontologies/2022aut/team2/Visas> ;
+                                                          rdfs:range <http://lis537.uw.edu/ontologies/2022aut/team2/People> .
+
+
+###  http://lis537.uw.edu/ontologies/2022aut/team2/hasPartOrganization
+<http://lis537.uw.edu/ontologies/2022aut/team2/hasPartOrganization> rdf:type owl:ObjectProperty ;
+                                                                    rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                    owl:inverseOf <http://lis537.uw.edu/ontologies/2022aut/team2/isPartOfOrganization> ;
+                                                                    rdfs:domain <http://lis537.uw.edu/ontologies/2022aut/team2/Organizations> ;
+                                                                    rdfs:range <http://lis537.uw.edu/ontologies/2022aut/team2/Organizations> .
+
+
+###  http://lis537.uw.edu/ontologies/2022aut/team2/hasPartPlace
+<http://lis537.uw.edu/ontologies/2022aut/team2/hasPartPlace> rdf:type owl:ObjectProperty ;
+                                                             rdfs:subPropertyOf owl:topObjectProperty ;
+                                                             owl:inverseOf <http://lis537.uw.edu/ontologies/2022aut/team2/isPartOfPlace> ;
+                                                             rdfs:domain <http://lis537.uw.edu/ontologies/2022aut/team2/Places> ;
+                                                             rdfs:range <http://lis537.uw.edu/ontologies/2022aut/team2/Places> .
+
+
+###  http://lis537.uw.edu/ontologies/2022aut/team2/hasReceivingState
+<http://lis537.uw.edu/ontologies/2022aut/team2/hasReceivingState> rdf:type owl:ObjectProperty ;
+                                                                  rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                  owl:inverseOf <http://lis537.uw.edu/ontologies/2022aut/team2/isReceivingStateOf> ;
+                                                                  rdfs:domain <http://lis537.uw.edu/ontologies/2022aut/team2/Service_centers> ;
+                                                                  rdfs:range <http://lis537.uw.edu/ontologies/2022aut/team2/Countries> .
+
+
+###  http://lis537.uw.edu/ontologies/2022aut/team2/hasSendingState
+<http://lis537.uw.edu/ontologies/2022aut/team2/hasSendingState> rdf:type owl:ObjectProperty ;
+                                                                rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                owl:inverseOf <http://lis537.uw.edu/ontologies/2022aut/team2/isSendingStateOf> ;
+                                                                rdfs:domain <http://lis537.uw.edu/ontologies/2022aut/team2/Service_centers> ;
+                                                                rdfs:range <http://lis537.uw.edu/ontologies/2022aut/team2/Countries> .
+
+
+###  http://lis537.uw.edu/ontologies/2022aut/team2/isCitizenOf
+<http://lis537.uw.edu/ontologies/2022aut/team2/isCitizenOf> rdf:type owl:ObjectProperty ;
+                                                            rdfs:subPropertyOf owl:topObjectProperty ;
+                                                            rdfs:domain <http://lis537.uw.edu/ontologies/2022aut/team2/People> ;
+                                                            rdfs:range <http://lis537.uw.edu/ontologies/2022aut/team2/Countries> .
+
+
+###  http://lis537.uw.edu/ontologies/2022aut/team2/isCurrentAddressOf
+<http://lis537.uw.edu/ontologies/2022aut/team2/isCurrentAddressOf> rdf:type owl:ObjectProperty ;
+                                                                   rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                   rdfs:domain <http://lis537.uw.edu/ontologies/2022aut/team2/Places> ;
+                                                                   rdfs:range <http://lis537.uw.edu/ontologies/2022aut/team2/People> .
+
+
+###  http://lis537.uw.edu/ontologies/2022aut/team2/isFounderOf
+<http://lis537.uw.edu/ontologies/2022aut/team2/isFounderOf> rdf:type owl:ObjectProperty ;
+                                                            rdfs:subPropertyOf owl:topObjectProperty ;
+                                                            rdfs:domain <http://lis537.uw.edu/ontologies/2022aut/team2/People> ;
+                                                            rdfs:range <http://lis537.uw.edu/ontologies/2022aut/team2/Organizations> .
+
+
+###  http://lis537.uw.edu/ontologies/2022aut/team2/isHolderOf
+<http://lis537.uw.edu/ontologies/2022aut/team2/isHolderOf> rdf:type owl:ObjectProperty ;
+                                                           rdfs:subPropertyOf owl:topObjectProperty ;
+                                                           rdfs:domain <http://lis537.uw.edu/ontologies/2022aut/team2/People> ;
+                                                           rdfs:range <http://lis537.uw.edu/ontologies/2022aut/team2/Visas> .
+
+
+###  http://lis537.uw.edu/ontologies/2022aut/team2/isIssuedBy
+<http://lis537.uw.edu/ontologies/2022aut/team2/isIssuedBy> rdf:type owl:ObjectProperty ;
+                                                           rdfs:subPropertyOf owl:topObjectProperty ;
+                                                           rdfs:domain <http://lis537.uw.edu/ontologies/2022aut/team2/Visas> ;
+                                                           rdfs:range <http://lis537.uw.edu/ontologies/2022aut/team2/Service_centers> .
+
+
+###  http://lis537.uw.edu/ontologies/2022aut/team2/isPartOfOrganization
+<http://lis537.uw.edu/ontologies/2022aut/team2/isPartOfOrganization> rdf:type owl:ObjectProperty ;
+                                                                     rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                     rdfs:domain <http://lis537.uw.edu/ontologies/2022aut/team2/Organizations> ;
+                                                                     rdfs:range <http://lis537.uw.edu/ontologies/2022aut/team2/Organizations> .
+
+
+###  http://lis537.uw.edu/ontologies/2022aut/team2/isPartOfPlace
+<http://lis537.uw.edu/ontologies/2022aut/team2/isPartOfPlace> rdf:type owl:ObjectProperty ;
+                                                              rdfs:subPropertyOf owl:topObjectProperty ;
+                                                              rdfs:domain <http://lis537.uw.edu/ontologies/2022aut/team2/Places> ;
+                                                              rdfs:range <http://lis537.uw.edu/ontologies/2022aut/team2/Places> .
+
+
+###  http://lis537.uw.edu/ontologies/2022aut/team2/isPassedBy
+<http://lis537.uw.edu/ontologies/2022aut/team2/isPassedBy> rdf:type owl:ObjectProperty ;
+                                                           rdfs:subPropertyOf owl:topObjectProperty ;
+                                                           rdfs:domain <http://lis537.uw.edu/ontologies/2022aut/team2/Laws> ;
+                                                           rdfs:range <http://lis537.uw.edu/ontologies/2022aut/team2/Legislative_bodies> .
+
+
+###  http://lis537.uw.edu/ontologies/2022aut/team2/isReceivingStateOf
+<http://lis537.uw.edu/ontologies/2022aut/team2/isReceivingStateOf> rdf:type owl:ObjectProperty ;
+                                                                   rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                   rdfs:domain <http://lis537.uw.edu/ontologies/2022aut/team2/Service_centers> ;
+                                                                   rdfs:range <http://lis537.uw.edu/ontologies/2022aut/team2/Countries> .
+
+
+###  http://lis537.uw.edu/ontologies/2022aut/team2/isSendingStateOf
+<http://lis537.uw.edu/ontologies/2022aut/team2/isSendingStateOf> rdf:type owl:ObjectProperty ;
+                                                                 rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                 rdfs:domain <http://lis537.uw.edu/ontologies/2022aut/team2/Countries> ;
+                                                                 rdfs:range <http://lis537.uw.edu/ontologies/2022aut/team2/Service_centers> .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://lis537.uw.edu/ontologies/2022aut/team2/hasIssueDate
+<http://lis537.uw.edu/ontologies/2022aut/team2/hasIssueDate> rdf:type owl:DatatypeProperty ;
+                                                             rdfs:subPropertyOf owl:topDataProperty ;
+                                                             rdfs:domain <http://lis537.uw.edu/ontologies/2022aut/team2/Visas> .
+
+
+###  http://lis537.uw.edu/ontologies/2022aut/team2/hasPassageDate
+<http://lis537.uw.edu/ontologies/2022aut/team2/hasPassageDate> rdf:type owl:DatatypeProperty ;
+                                                               rdfs:subPropertyOf owl:topDataProperty ;
+                                                               rdfs:domain <http://lis537.uw.edu/ontologies/2022aut/team2/Laws> .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://lis537.uw.edu/ontologies/2022aut/team2/Agents
+<http://lis537.uw.edu/ontologies/2022aut/team2/Agents> rdf:type owl:Class .
+
+
+###  http://lis537.uw.edu/ontologies/2022aut/team2/Artifacts
+<http://lis537.uw.edu/ontologies/2022aut/team2/Artifacts> rdf:type owl:Class .
+
+
+###  http://lis537.uw.edu/ontologies/2022aut/team2/Cities
+<http://lis537.uw.edu/ontologies/2022aut/team2/Cities> rdf:type owl:Class ;
+                                                       rdfs:subClassOf <http://lis537.uw.edu/ontologies/2022aut/team2/Places> .
+
+
+###  http://lis537.uw.edu/ontologies/2022aut/team2/Consulates
+<http://lis537.uw.edu/ontologies/2022aut/team2/Consulates> rdf:type owl:Class ;
+                                                           rdfs:subClassOf <http://lis537.uw.edu/ontologies/2022aut/team2/Service_centers> .
+
+
+###  http://lis537.uw.edu/ontologies/2022aut/team2/Countries
+<http://lis537.uw.edu/ontologies/2022aut/team2/Countries> rdf:type owl:Class ;
+                                                          rdfs:subClassOf <http://lis537.uw.edu/ontologies/2022aut/team2/Places> .
+
+
+###  http://lis537.uw.edu/ontologies/2022aut/team2/Documentation
+<http://lis537.uw.edu/ontologies/2022aut/team2/Documentation> rdf:type owl:Class ;
+                                                              rdfs:subClassOf <http://lis537.uw.edu/ontologies/2022aut/team2/Artifacts> .
+
+
+###  http://lis537.uw.edu/ontologies/2022aut/team2/Embassies
+<http://lis537.uw.edu/ontologies/2022aut/team2/Embassies> rdf:type owl:Class ;
+                                                          rdfs:subClassOf <http://lis537.uw.edu/ontologies/2022aut/team2/Service_centers> .
+
+
+###  http://lis537.uw.edu/ontologies/2022aut/team2/Executive_bodies
+<http://lis537.uw.edu/ontologies/2022aut/team2/Executive_bodies> rdf:type owl:Class ;
+                                                                 rdfs:subClassOf <http://lis537.uw.edu/ontologies/2022aut/team2/Government_organizations> .
+
+
+###  http://lis537.uw.edu/ontologies/2022aut/team2/F1_visas
+<http://lis537.uw.edu/ontologies/2022aut/team2/F1_visas> rdf:type owl:Class ;
+                                                         rdfs:subClassOf <http://lis537.uw.edu/ontologies/2022aut/team2/Student_visas> .
+
+
+###  http://lis537.uw.edu/ontologies/2022aut/team2/Government_organizations
+<http://lis537.uw.edu/ontologies/2022aut/team2/Government_organizations> rdf:type owl:Class ;
+                                                                         rdfs:subClassOf <http://lis537.uw.edu/ontologies/2022aut/team2/Organizations> .
+
+
+###  http://lis537.uw.edu/ontologies/2022aut/team2/Immigrants
+<http://lis537.uw.edu/ontologies/2022aut/team2/Immigrants> rdf:type owl:Class ;
+                                                           rdfs:subClassOf <http://lis537.uw.edu/ontologies/2022aut/team2/People> .
+
+
+###  http://lis537.uw.edu/ontologies/2022aut/team2/Laws
+<http://lis537.uw.edu/ontologies/2022aut/team2/Laws> rdf:type owl:Class ;
+                                                     rdfs:subClassOf <http://lis537.uw.edu/ontologies/2022aut/team2/Artifacts> .
+
+
+###  http://lis537.uw.edu/ontologies/2022aut/team2/Legislative_bodies
+<http://lis537.uw.edu/ontologies/2022aut/team2/Legislative_bodies> rdf:type owl:Class ;
+                                                                   rdfs:subClassOf <http://lis537.uw.edu/ontologies/2022aut/team2/Government_organizations> .
+
+
+###  http://lis537.uw.edu/ontologies/2022aut/team2/Non-governmental_organizations
+<http://lis537.uw.edu/ontologies/2022aut/team2/Non-governmental_organizations> rdf:type owl:Class ;
+                                                                               rdfs:subClassOf <http://lis537.uw.edu/ontologies/2022aut/team2/Organizations> .
+
+
+###  http://lis537.uw.edu/ontologies/2022aut/team2/Noncitizens
+<http://lis537.uw.edu/ontologies/2022aut/team2/Noncitizens> rdf:type owl:Class ;
+                                                            rdfs:subClassOf <http://lis537.uw.edu/ontologies/2022aut/team2/People> .
+
+
+###  http://lis537.uw.edu/ontologies/2022aut/team2/Organizations
+<http://lis537.uw.edu/ontologies/2022aut/team2/Organizations> rdf:type owl:Class ;
+                                                              rdfs:subClassOf <http://lis537.uw.edu/ontologies/2022aut/team2/Agents> .
+
+
+###  http://lis537.uw.edu/ontologies/2022aut/team2/People
+<http://lis537.uw.edu/ontologies/2022aut/team2/People> rdf:type owl:Class ;
+                                                       rdfs:subClassOf <http://lis537.uw.edu/ontologies/2022aut/team2/Agents> .
+
+
+###  http://lis537.uw.edu/ontologies/2022aut/team2/Places
+<http://lis537.uw.edu/ontologies/2022aut/team2/Places> rdf:type owl:Class .
+
+
+###  http://lis537.uw.edu/ontologies/2022aut/team2/Sanctuary_cities
+<http://lis537.uw.edu/ontologies/2022aut/team2/Sanctuary_cities> rdf:type owl:Class ;
+                                                                 rdfs:subClassOf <http://lis537.uw.edu/ontologies/2022aut/team2/Cities> .
+
+
+###  http://lis537.uw.edu/ontologies/2022aut/team2/Service_centers
+<http://lis537.uw.edu/ontologies/2022aut/team2/Service_centers> rdf:type owl:Class ;
+                                                                rdfs:subClassOf <http://lis537.uw.edu/ontologies/2022aut/team2/Places> .
+
+
+###  http://lis537.uw.edu/ontologies/2022aut/team2/Student_visas
+<http://lis537.uw.edu/ontologies/2022aut/team2/Student_visas> rdf:type owl:Class ;
+                                                              rdfs:subClassOf <http://lis537.uw.edu/ontologies/2022aut/team2/Visas> .
+
+
+###  http://lis537.uw.edu/ontologies/2022aut/team2/Undocumented_immigrants
+<http://lis537.uw.edu/ontologies/2022aut/team2/Undocumented_immigrants> rdf:type owl:Class ;
+                                                                        rdfs:subClassOf <http://lis537.uw.edu/ontologies/2022aut/team2/Immigrants> ,
+                                                                                        <http://lis537.uw.edu/ontologies/2022aut/team2/Noncitizens> .
+
+
+###  http://lis537.uw.edu/ontologies/2022aut/team2/Visas
+<http://lis537.uw.edu/ontologies/2022aut/team2/Visas> rdf:type owl:Class ;
+                                                      rdfs:subClassOf <http://lis537.uw.edu/ontologies/2022aut/team2/Documentation> .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://lis537.uw.edu/ontologies/2022aut/team2/Beijing
+<http://lis537.uw.edu/ontologies/2022aut/team2/Beijing> rdf:type owl:NamedIndividual ,
+                                                                 <http://lis537.uw.edu/ontologies/2022aut/team2/Cities> ;
+                                                        <http://lis537.uw.edu/ontologies/2022aut/team2/isPartOfPlace> <http://lis537.uw.edu/ontologies/2022aut/team2/China> .
+
+
+###  http://lis537.uw.edu/ontologies/2022aut/team2/Board_of_Immigration_Appeals
+<http://lis537.uw.edu/ontologies/2022aut/team2/Board_of_Immigration_Appeals> rdf:type owl:NamedIndividual ,
+                                                                                      <http://lis537.uw.edu/ontologies/2022aut/team2/Executive_bodies> ;
+                                                                             <http://lis537.uw.edu/ontologies/2022aut/team2/isPartOfOrganization> <http://lis537.uw.edu/ontologies/2022aut/team2/Executive_Office_for_Immigration_Review> .
+
+
+###  http://lis537.uw.edu/ontologies/2022aut/team2/China
+<http://lis537.uw.edu/ontologies/2022aut/team2/China> rdf:type owl:NamedIndividual ,
+                                                               <http://lis537.uw.edu/ontologies/2022aut/team2/Countries> .
+
+
+###  http://lis537.uw.edu/ontologies/2022aut/team2/Define_American
+<http://lis537.uw.edu/ontologies/2022aut/team2/Define_American> rdf:type owl:NamedIndividual ,
+                                                                         <http://lis537.uw.edu/ontologies/2022aut/team2/Non-governmental_organizations> .
+
+
+###  http://lis537.uw.edu/ontologies/2022aut/team2/Executive_Office_for_Immigration_Review
+<http://lis537.uw.edu/ontologies/2022aut/team2/Executive_Office_for_Immigration_Review> rdf:type owl:NamedIndividual ,
+                                                                                                 <http://lis537.uw.edu/ontologies/2022aut/team2/Executive_bodies> ;
+                                                                                        <http://lis537.uw.edu/ontologies/2022aut/team2/isPartOfOrganization> <http://lis537.uw.edu/ontologies/2022aut/team2/United_States_Department_of_Justice> .
+
+
+###  http://lis537.uw.edu/ontologies/2022aut/team2/Immigration_and_Nationality_Act
+<http://lis537.uw.edu/ontologies/2022aut/team2/Immigration_and_Nationality_Act> rdf:type owl:NamedIndividual ,
+                                                                                         <http://lis537.uw.edu/ontologies/2022aut/team2/Laws> ;
+                                                                                <http://lis537.uw.edu/ontologies/2022aut/team2/isPassedBy> <http://lis537.uw.edu/ontologies/2022aut/team2/United_States_Congress> ;
+                                                                                <http://lis537.uw.edu/ontologies/2022aut/team2/hasPassageDate> "1952"^^rdfs:Literal .
+
+
+###  http://lis537.uw.edu/ontologies/2022aut/team2/Jose_Antonio_Vargas
+<http://lis537.uw.edu/ontologies/2022aut/team2/Jose_Antonio_Vargas> rdf:type owl:NamedIndividual ,
+                                                                             <http://lis537.uw.edu/ontologies/2022aut/team2/Undocumented_immigrants> ;
+                                                                    <http://lis537.uw.edu/ontologies/2022aut/team2/hasCurrentAddress> <http://lis537.uw.edu/ontologies/2022aut/team2/United_States_of_America> ;
+                                                                    <http://lis537.uw.edu/ontologies/2022aut/team2/isCitizenOf> <http://lis537.uw.edu/ontologies/2022aut/team2/Philippines> ;
+                                                                    <http://lis537.uw.edu/ontologies/2022aut/team2/isFounderOf> <http://lis537.uw.edu/ontologies/2022aut/team2/Define_American> .
+
+
+###  http://lis537.uw.edu/ontologies/2022aut/team2/Legal_Immigration_and_Family_Equity_Act
+<http://lis537.uw.edu/ontologies/2022aut/team2/Legal_Immigration_and_Family_Equity_Act> rdf:type owl:NamedIndividual ,
+                                                                                                 <http://lis537.uw.edu/ontologies/2022aut/team2/Laws> ;
+                                                                                        <http://lis537.uw.edu/ontologies/2022aut/team2/isPassedBy> <http://lis537.uw.edu/ontologies/2022aut/team2/United_States_Congress> ;
+                                                                                        <http://lis537.uw.edu/ontologies/2022aut/team2/hasPassageDate> "2000"^^rdfs:Literal .
+
+
+###  http://lis537.uw.edu/ontologies/2022aut/team2/New_York_City_NY
+<http://lis537.uw.edu/ontologies/2022aut/team2/New_York_City_NY> rdf:type owl:NamedIndividual ,
+                                                                          <http://lis537.uw.edu/ontologies/2022aut/team2/Sanctuary_cities> ;
+                                                                 <http://lis537.uw.edu/ontologies/2022aut/team2/isPartOfPlace> <http://lis537.uw.edu/ontologies/2022aut/team2/United_States_of_America> .
+
+
+###  http://lis537.uw.edu/ontologies/2022aut/team2/Patriot_Act
+<http://lis537.uw.edu/ontologies/2022aut/team2/Patriot_Act> rdf:type owl:NamedIndividual ,
+                                                                     <http://lis537.uw.edu/ontologies/2022aut/team2/Laws> ;
+                                                            <http://lis537.uw.edu/ontologies/2022aut/team2/isPassedBy> <http://lis537.uw.edu/ontologies/2022aut/team2/United_States_Congress> ;
+                                                            <http://lis537.uw.edu/ontologies/2022aut/team2/hasPassageDate> "2001"^^rdfs:Literal .
+
+
+###  http://lis537.uw.edu/ontologies/2022aut/team2/Philippines
+<http://lis537.uw.edu/ontologies/2022aut/team2/Philippines> rdf:type owl:NamedIndividual ,
+                                                                     <http://lis537.uw.edu/ontologies/2022aut/team2/Countries> .
+
+
+###  http://lis537.uw.edu/ontologies/2022aut/team2/Seattle_WA
+<http://lis537.uw.edu/ontologies/2022aut/team2/Seattle_WA> rdf:type owl:NamedIndividual ,
+                                                                    <http://lis537.uw.edu/ontologies/2022aut/team2/Sanctuary_cities> ;
+                                                           <http://lis537.uw.edu/ontologies/2022aut/team2/isPartOfPlace> <http://lis537.uw.edu/ontologies/2022aut/team2/United_States_of_America> .
+
+
+###  http://lis537.uw.edu/ontologies/2022aut/team2/Shanghai
+<http://lis537.uw.edu/ontologies/2022aut/team2/Shanghai> rdf:type owl:NamedIndividual ,
+                                                                  <http://lis537.uw.edu/ontologies/2022aut/team2/Cities> ;
+                                                         <http://lis537.uw.edu/ontologies/2022aut/team2/isPartOfPlace> <http://lis537.uw.edu/ontologies/2022aut/team2/China> .
+
+
+###  http://lis537.uw.edu/ontologies/2022aut/team2/U.S._Consulate_General_Shanghai
+<http://lis537.uw.edu/ontologies/2022aut/team2/U.S._Consulate_General_Shanghai> rdf:type owl:NamedIndividual ,
+                                                                                         <http://lis537.uw.edu/ontologies/2022aut/team2/Consulates> ;
+                                                                                <http://lis537.uw.edu/ontologies/2022aut/team2/hasSendingState> <http://lis537.uw.edu/ontologies/2022aut/team2/United_States_of_America> ;
+                                                                                <http://lis537.uw.edu/ontologies/2022aut/team2/isPartOfPlace> <http://lis537.uw.edu/ontologies/2022aut/team2/Shanghai> .
+
+
+###  http://lis537.uw.edu/ontologies/2022aut/team2/U.S._Embassy_Beijing
+<http://lis537.uw.edu/ontologies/2022aut/team2/U.S._Embassy_Beijing> rdf:type owl:NamedIndividual ,
+                                                                              <http://lis537.uw.edu/ontologies/2022aut/team2/Embassies> ;
+                                                                     <http://lis537.uw.edu/ontologies/2022aut/team2/hasReceivingState> <http://lis537.uw.edu/ontologies/2022aut/team2/United_States_of_America> ;
+                                                                     <http://lis537.uw.edu/ontologies/2022aut/team2/isPartOfPlace> <http://lis537.uw.edu/ontologies/2022aut/team2/Beijing> .
+
+
+###  http://lis537.uw.edu/ontologies/2022aut/team2/United_States_Citizenship_and_Immigration_Services
+<http://lis537.uw.edu/ontologies/2022aut/team2/United_States_Citizenship_and_Immigration_Services> rdf:type owl:NamedIndividual ,
+                                                                                                            <http://lis537.uw.edu/ontologies/2022aut/team2/Executive_bodies> .
+
+
+###  http://lis537.uw.edu/ontologies/2022aut/team2/United_States_Congress
+<http://lis537.uw.edu/ontologies/2022aut/team2/United_States_Congress> rdf:type owl:NamedIndividual ,
+                                                                                <http://lis537.uw.edu/ontologies/2022aut/team2/Legislative_bodies> .
+
+
+###  http://lis537.uw.edu/ontologies/2022aut/team2/United_States_Department_of_Justice
+<http://lis537.uw.edu/ontologies/2022aut/team2/United_States_Department_of_Justice> rdf:type owl:NamedIndividual ,
+                                                                                             <http://lis537.uw.edu/ontologies/2022aut/team2/Executive_bodies> .
+
+
+###  http://lis537.uw.edu/ontologies/2022aut/team2/United_States_Immigration_and_Customs_Enforcement
+<http://lis537.uw.edu/ontologies/2022aut/team2/United_States_Immigration_and_Customs_Enforcement> rdf:type owl:NamedIndividual ,
+                                                                                                           <http://lis537.uw.edu/ontologies/2022aut/team2/Executive_bodies> .
+
+
+###  http://lis537.uw.edu/ontologies/2022aut/team2/United_States_of_America
+<http://lis537.uw.edu/ontologies/2022aut/team2/United_States_of_America> rdf:type owl:NamedIndividual ,
+                                                                                  <http://lis537.uw.edu/ontologies/2022aut/team2/Countries> .
+
+
+###  http://lis537.uw.edu/ontologies/2022aut/team2/Zhuo_Pan
+<http://lis537.uw.edu/ontologies/2022aut/team2/Zhuo_Pan> rdf:type owl:NamedIndividual ,
+                                                                  <http://lis537.uw.edu/ontologies/2022aut/team2/Immigrants> ,
+                                                                  <http://lis537.uw.edu/ontologies/2022aut/team2/Noncitizens> ;
+                                                         <http://lis537.uw.edu/ontologies/2022aut/team2/hasCurrentAddress> <http://lis537.uw.edu/ontologies/2022aut/team2/United_States_of_America> ;
+                                                         <http://lis537.uw.edu/ontologies/2022aut/team2/isCitizenOf> <http://lis537.uw.edu/ontologies/2022aut/team2/China> ;
+                                                         <http://lis537.uw.edu/ontologies/2022aut/team2/isHolderOf> <http://lis537.uw.edu/ontologies/2022aut/team2/Zhuo_Pan's_F1_visa> .
+
+
+###  http://lis537.uw.edu/ontologies/2022aut/team2/Zhuo_Pan's_F1_visa
+<http://lis537.uw.edu/ontologies/2022aut/team2/Zhuo_Pan's_F1_visa> rdf:type owl:NamedIndividual ,
+                                                                            <http://lis537.uw.edu/ontologies/2022aut/team2/F1_visas> ;
+                                                                   <http://lis537.uw.edu/ontologies/2022aut/team2/hasIssueDate> "2021"^^rdfs:Literal .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
